@@ -1,0 +1,51 @@
+﻿{
+  "TrainingTime": 2147482,
+  "Scenario": "ImageClassification",
+  "DataSource": {
+    "Type": "Folder",
+    "Version": 1,
+    "FolderPath": "C:\\Users\\User\\Documents\\School\\3rd Year 2nd Semester\\CS346 IS2\\Week 16 (May 7, 2023)\\Large Scale Fish Dataset\\Fish for Training"
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 1,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "DNN + ResNet50",
+        "Score": 0.9946236559139785,
+        "RuntimeInSeconds": 905.6510009765625
+      }
+    ],
+    "Pipeline": {
+      "parameter": {
+        "0": {
+          "OutputColumnName": "Label",
+          "InputColumnName": "Label"
+        },
+        "1": {
+          "LabelColumnName": "Label",
+          "ScoreColumnName": "Score",
+          "FeatureColumnName": "ImageSource"
+        },
+        "2": {
+          "OutputColumnName": "PredictedLabel",
+          "InputColumnName": "PredictedLabel"
+        }
+      },
+      "estimators": [
+        "MapValueToKey",
+        "ImageClassificationMulti",
+        "MapKeyToValue"
+      ]
+    },
+    "MetricName": "MicroAccuracy"
+  },
+  "Type": "TrainingConfig",
+  "Version": 2
+}
