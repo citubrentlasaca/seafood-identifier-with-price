@@ -13,7 +13,7 @@ function MainScreen() {
 
   const handleFileUpload = async (name) => {
     setFileName(name);
-    const filePath = `C:\\Users\\User\\Documents\\School\\3rd Year 2nd Semester\\CS346 IS2\\Week 16 (May 7, 2023)\\fish-identifier-with-price-application\\fish-identifier-with-price\\src\\Images\\${name}`
+    const filePath = `Insert Local Path\\${name}`
     if (name !== '') {
       setImageUploaded(true);
       try {
